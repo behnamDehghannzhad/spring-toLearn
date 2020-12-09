@@ -1,6 +1,7 @@
 package b.dehghanezhad.springwebApp.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,10 +15,10 @@ public class Book {
     private String isbn;
     private String publisher;
     @ManyToMany
-    @JoinTable(name = "Aouthor_Book",
+    @JoinTable(name = "Author_Book",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name ="author_id"))
-    private List<Author> authors;
+    private List<Author> authors = new ArrayList<>();
 
     public Book() {
     }
